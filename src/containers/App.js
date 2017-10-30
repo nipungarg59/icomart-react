@@ -5,7 +5,7 @@ import {
   Link
 } from 'react-router-dom'
 
-export default App = () => (
+const App = () => (
   <Router>
     <Route path="/auth/login" component={Login}/>
     <Route path="/auth/register" component={Register}/>
@@ -13,3 +13,5 @@ export default App = () => (
     <Route path="/auth/confirm/:token" component={Confirm}/>
   </Router>
 )
+
+export default App
