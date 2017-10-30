@@ -3,8 +3,7 @@ import {
   Form,
   FormGroup,
   ControlLabel,
-  FormControl,
-  Button
+  FormControl
 } from 'react-bootstrap'
 
 import './Login.css'

@@ -5,6 +5,7 @@ import {
 } from 'react-router-dom'
 
 import Login from './Login'
+import Register from './Register'
 
 import Navbar from '../components/Navbar'
 
@@ -17,6 +18,7 @@ const App = () => (
 
       <main className="container">
         <Route path="/auth/login" component={Login}/>
+        <Route path="/auth/register" component={Register}/>
       </main>
     </div>
   </Router>
