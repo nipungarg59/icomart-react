@@ -34,7 +34,7 @@ class Login extends Component {
       headers: {
         "Content-Type": "application/json"
       },
-    }).then(res => res.json()).then(res => { this.props.handleUser(res) })
+    }).then(res => res.json()).then(res => { this.props.handleLogin(res) })
   }
 
   render() {

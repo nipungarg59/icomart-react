@@ -16,10 +16,10 @@ class App extends Component {
     super(props)
     this.state = {}
 
-    this.handleUser = this.handleUser.bind(this)
+    this.handleLogin = this.handleLogin.bind(this)
   }
 
-  handleUser(data) {
+  handleLogin(data) {
     this.setState({ ...data })
   }
 
@@ -30,7 +30,7 @@ class App extends Component {
           <Navbar username={this.state.user ? this.state.user.username : undefined}/>
 
           <div className="container" id="main">
-            <Route path="/auth/login" render={() => <Login handleUser={this.handleUser}/>}/>
+            <Route path="/auth/login" render={() => <Login handleLogin={this.handleLogin}/>}/>
             <Route path="/auth/register" component={Register}/>
           </div>
         </div>
