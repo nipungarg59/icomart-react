@@ -28,20 +28,20 @@ class Login extends Component {
 
   handleSubmit(evt) {
     evt.preventDefault();
-    fetch('http://192.168.43.231:8000/login', {
+    fetch('http://172.16.96.208:8000/login', {
       method: "POST",
       body: JSON.stringify(this.state),
       headers: {
         "Content-Type": "application/json"
       },
-    }).then(res => res.text()).then(res => { console.log(res) })
+    }).then(res => res.json()).then(res => { this.props.handleUser(res) })
   }
 
   render() {
     return (
       <Form horizontal onSubmit={this.handleSubmit}>
         <FormGroup controlId="loginUsername">
-          <ControlLabel>Username or Email [{this.state.username}]</ControlLabel>
+          <ControlLabel>Username or Email</ControlLabel>
           <FormControl
             type="text"
             placeholder="john.doe@example.com"
@@ -49,7 +49,7 @@ class Login extends Component {
             onChange={this.handleChangeUsername}/>
         </FormGroup>
         <FormGroup controlId="loginPassword">
-          <ControlLabel>Password [{this.state.password}]</ControlLabel>
+          <ControlLabel>Password</ControlLabel>
           <FormControl
             type="password"
             value={this.state.password}

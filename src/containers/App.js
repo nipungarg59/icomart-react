@@ -12,14 +12,25 @@ import Navbar from '../components/Navbar'
 import './App.css'
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {}
+
+    this.handleUser = this.handleUser.bind(this)
+  }
+
+  handleUser(data) {
+    this.setState({ ...data })
+  }
+
   render() {
     return (
       <Router>
         <div id="app">
-          <Navbar/>
+          <Navbar username={this.state.user ? this.state.user.username : undefined}/>
 
           <div className="container" id="main">
-            <Route path="/auth/login" component={Login}/>
+            <Route path="/auth/login" render={() => <Login handleUser={this.handleUser}/>}/>
             <Route path="/auth/register" component={Register}/>
           </div>
         </div>
