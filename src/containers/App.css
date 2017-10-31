@@ -1,7 +1,14 @@
-main.container {
+#main {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   margin-top: -72px;
+  left: 0;
+}
+
+#app {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
 }
