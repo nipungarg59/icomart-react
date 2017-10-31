@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import {
   BrowserRouter as Router,
   Route
@@ -11,17 +11,21 @@ import Navbar from '../components/Navbar'
 
 import './App.css'
 
-const App = () => (
-  <Router>
-    <div id="app">
-      <Navbar/>
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <div id="app">
+          <Navbar/>
 
-      <div className="container" id="main">
-        <Route path="/auth/login" component={Login}/>
-        <Route path="/auth/register" component={Register}/>
-      </div>
-    </div>
-  </Router>
-)
+          <div className="container" id="main">
+            <Route path="/auth/login" component={Login}/>
+            <Route path="/auth/register" component={Register}/>
+          </div>
+        </div>
+      </Router>
+    )
+  }
+}
 
 export default App
