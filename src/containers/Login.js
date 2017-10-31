@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import {
   Form,
   FormGroup,
@@ -8,20 +8,24 @@ import {
 
 import './Login.css'
 
-const Login = () => (
-  <Form horizontal>
-    <FormGroup controlId="loginUsername">
-      <ControlLabel>Username or Email</ControlLabel>
-      <FormControl type="text" placeholder="john.doe@example.com"/>
-    </FormGroup>
-    <FormGroup controlId="loginPassword">
-      <ControlLabel>Password</ControlLabel>
-      <FormControl type="password"/>
-    </FormGroup>
-    <FormGroup controlId="loginSubmit">
-      <FormControl type="submit" value="Login"/>
-    </FormGroup>
-  </Form>
-)
+class Login extends Component {
+  render() {
+    return (
+      <Form horizontal>
+        <FormGroup controlId="loginUsername">
+          <ControlLabel>Username or Email</ControlLabel>
+          <FormControl type="text" placeholder="john.doe@example.com"/>
+        </FormGroup>
+        <FormGroup controlId="loginPassword">
+          <ControlLabel>Password</ControlLabel>
+          <FormControl type="password"/>
+        </FormGroup>
+        <FormGroup controlId="loginSubmit">
+          <FormControl type="submit" value="Login"/>
+        </FormGroup>
+      </Form>
+    )
+  }
+}
 
 export default Login
