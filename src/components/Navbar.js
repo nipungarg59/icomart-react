@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Navbar, Nav, NavItem } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 
-const NavbarComponent = ({ username }) => (
+const NavbarComponent = ({ username, handleLogout }) => (
   <Navbar>
     <Navbar.Header>
       <Navbar.Brand>
@@ -13,7 +13,7 @@ const NavbarComponent = ({ username }) => (
     { username ?
       <Nav pullRight>
         <NavItem eventKey={1}>{ username }</NavItem>
-        <NavItem eventKey={2}>Logout</NavItem>
+        <NavItem eventKey={2} onClick={handleLogout}>Logout</NavItem>
       </Nav>:
       <Nav pullRight>
         <LinkContainer to="/auth/login">
