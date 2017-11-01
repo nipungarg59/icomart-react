@@ -14,6 +14,9 @@ const NavbarComponent = ({ username, handleLogout }) => (
       <Nav pullRight>
         <NavItem eventKey={1}>{ username }</NavItem>
         <NavItem eventKey={2} onClick={handleLogout}>Logout</NavItem>
+        <LinkContainer to="/profile">
+          <NavItem eventKey={3}>Profile</NavItem>
+        </LinkContainer>
       </Nav>:
       <Nav pullRight>
         <LinkContainer to="/auth/login">
@@ -21,6 +24,9 @@ const NavbarComponent = ({ username, handleLogout }) => (
         </LinkContainer>
         <LinkContainer to="/auth/register">
           <NavItem eventKey={2} href="#">Register</NavItem>
+        </LinkContainer>
+        <LinkContainer to="/profile">
+          <NavItem eventKey={3}>Profile</NavItem>
         </LinkContainer>
       </Nav>
     }

@@ -6,6 +6,7 @@ import {
 
 import Login from './Login'
 import Register from './Register'
+import Profile from '../components/Profile'
 
 import Navbar from '../components/Navbar'
 
@@ -47,6 +48,7 @@ class App extends Component {
           <div className="container" id="main">
             <Route path="/auth/login" render={() => <Login handleLogin={this.handleLogin}/>}/>
             <Route path="/auth/register" component={Register}/>
+            <Route path="/profile" render={() => <Profile user={this.state.user}/>}/>
           </div>
         </div>
       </Router>
