@@ -30,7 +30,10 @@ class App extends Component {
       headers: {
         'SESSIONID': this.state.session_id
       }
-    }).then(() => alert('Logged out successfully!'))
+    }).then(() => {
+      alert('Logged out successfully!')
+      this.setState({ user: undefined, session_id: undefined})
+    })
   }
 
   render() {
