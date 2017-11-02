@@ -7,6 +7,7 @@ import {
 import Login from './Login'
 import Register from './Register'
 import Profile from '../components/Profile'
+import VerifyEmail from '../components/VerifyEmail'
 
 import Navbar from '../components/Navbar'
 
@@ -49,6 +50,7 @@ class App extends Component {
             <Route path="/auth/login" render={() => <Login handleLogin={this.handleLogin}/>}/>
             <Route path="/auth/register" component={Register}/>
             <Route path="/profile" render={() => <Profile user={this.state.user}/>}/>
+            <Route path="/auth/verify/email/:token" component={VerifyEmail}/>
           </div>
         </div>
       </Router>
