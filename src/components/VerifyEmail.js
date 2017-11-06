@@ -3,13 +3,6 @@ import {withRouter} from "react-router-dom";
 
 class VerifyEmail extends Component {
   
-  constructor(props){
-    super(props);
-    this.state = {
-      message : "Verifying email ..."
-    }
-  }
-
   componentDidMount(){
     fetch('http://172.16.96.208:8000/verify/email', {
       method: "POST",
@@ -18,8 +11,7 @@ class VerifyEmail extends Component {
         "Content-Type": "application/json"
       },
     }).then(res => res.json()).then(res => { 
-        if(res.result==false){
-          this.setState({message : res.message})
+        if(res.result===false){
 
           if (res.message.includes("exists")){
             this.props.history.push("/auth/login?ref=email_INVAL");
@@ -36,7 +28,7 @@ class VerifyEmail extends Component {
 
   render(){
     return(
-      <h1>{this.state.message}</h1>
+      <h1>Verifying email ...</h1>
     )
   }
 
