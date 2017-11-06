@@ -9,7 +9,7 @@ import Register from './Register'
 import Profile from '../components/Profile'
 import VerifyEmail from '../components/VerifyEmail'
 import ResetPassword from '../components/ResetPassword'
-
+import Dashboard from './Dashboard'
 import Navbar from '../components/Navbar'
 
 import './App.css'
@@ -51,8 +51,9 @@ class App extends Component {
             <Route path="/auth/login" render={() => <Login handleLogin={this.handleLogin}/>}/>
             <Route path="/auth/register" component={Register}/>
             <Route path="/profile" render={() => <Profile user={this.state.user}/>}/>
-            <Route path="/auth/verify/email/:token" component={VerifyEmail}/>
+            <Route path="/auth/verify/email/:token" component={VerifyEmail}/>]
             <Route path="/auth/reset/password/:token" component={ResetPassword}/>
+            <Route path="/" exact component={Dashboard}/>
           </div>
         </div>
       </Router>
