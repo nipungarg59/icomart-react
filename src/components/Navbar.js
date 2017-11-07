@@ -18,7 +18,9 @@ const NavbarComponent = ({ username, handleLogout }) => (
             <LinkContainer to="/profile">
               <MenuItem eventKey={1.1}>Profile</MenuItem>
             </LinkContainer>
-            <MenuItem eventKey={1.2}>Publish ICO</MenuItem>
+            <LinkContainer to="/ico/publish">
+              <MenuItem eventKey={1.2}>Publish ICO</MenuItem>
+            </LinkContainer>
             <MenuItem divider/>
             <MenuItem eventKey={1.3}>Account Settings</MenuItem>
             <MenuItem eventKey={1.4} onClick={handleLogout}>Logout</MenuItem>
