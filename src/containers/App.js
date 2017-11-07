@@ -6,6 +6,7 @@ import {
 
 import Login from './Login'
 import Register from './Register'
+import Publish from './Publish'
 import Profile from '../components/Profile'
 import VerifyEmail from '../components/VerifyEmail'
 import ResetPassword from '../components/ResetPassword'
@@ -48,12 +49,13 @@ class App extends Component {
             handleLogout={this.handleLogout}/>
 
           <div className="container" id="main">
+            <Route path="/" exact component={Dashboard}/>
             <Route path="/auth/login" render={() => <Login handleLogin={this.handleLogin}/>}/>
             <Route path="/auth/register" component={Register}/>
-            <Route path="/profile" render={() => <Profile user={this.state.user}/>}/>
-            <Route path="/auth/verify/email/:token" component={VerifyEmail}/>]
+            <Route path="/auth/verify/email/:token" component={VerifyEmail}/>
             <Route path="/auth/reset/password/:token" component={ResetPassword}/>
-            <Route path="/" exact component={Dashboard}/>
+            <Route path="/profile" render={() => <Profile user={this.state.user}/>}/>
+            <Route path="/ico/publish" component={Publish}/>
           </div>
         </div>
       </Router>
