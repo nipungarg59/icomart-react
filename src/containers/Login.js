@@ -28,7 +28,7 @@ class Login extends Component {
 
   handleSubmit(evt) {
     evt.preventDefault();
-    fetch('http://172.16.96.208:8000/login', {
+    fetch(`http://${this.props.baseURL}/login`, {
       method: "POST",
       body: JSON.stringify(this.state),
       headers: {

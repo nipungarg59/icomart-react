@@ -18,7 +18,9 @@ import './App.css'
 class App extends Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      baseURL: 'api.staging.icofarm.net'
+    }
 
     this.handleLogin = this.handleLogin.bind(this)
     this.handleLogout = this.handleLogout.bind(this)
@@ -29,7 +31,7 @@ class App extends Component {
   }
 
   handleLogout() {
-    fetch('http://172.16.96.208:8000/logout', {
+    fetch(`http://${this.state.baseURL}/logout`, {
       method: 'POST',
       headers: {
         'SESSIONID': this.state.session_id
@@ -50,12 +52,12 @@ class App extends Component {
 
           <div className="container" id="main">
             <Route path="/" exact component={Dashboard}/>
-            <Route path="/auth/login" render={() => <Login handleLogin={this.handleLogin}/>}/>
-            <Route path="/auth/register" component={Register}/>
-            <Route path="/auth/verify/email/:token" component={VerifyEmail}/>
-            <Route path="/auth/reset/password/:token" component={ResetPassword}/>
+            <Route path="/auth/login" render={() => <Login baseURL={this.state.baseURL} handleLogin={this.handleLogin}/>}/>
+            <Route path="/auth/register" render={() => <Register baseURL={this.state/>}/>
+            <Route path="/auth/verify/email/:token" render={() => <VerifyEmail baseURL={this.state.baseURL}/>}/>
+            <Route path="/auth/reset/password/:token" render={() => <ResetPassword baseURL={this.state.baseURL}/>}/>
             <Route path="/profile" render={() => <Profile user={this.state.user}/>}/>
-            <Route path="/ico/publish" component={Publish}/>
+            <Route path="/ico/publish" render={() => <Publish baseURL={this.state.baseURL} session_id={this.state.session_id}/>}/>
           </div>
         </div>
       </Router>

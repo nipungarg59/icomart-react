@@ -67,11 +67,14 @@ class Publish extends Component {
 
   handleSubmit(evt) {
     evt.preventDefault();
-    fetch('http://172.16.96.208:8000/publish/ico', {
+    const categories = this.state.categories.split(',')
+    console.log({ ...this.state, categories })
+    fetch(`http://${this.props.baseURL}/publish/ico`, {
       method: "POST",
-      body: this.state,
+      body: JSON.stringify({ ...this.state, categories }),
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "SESSIONID": this.props.session_id
       },
     }).then(res => res.json()).then(res => {
       if (res.result) {
