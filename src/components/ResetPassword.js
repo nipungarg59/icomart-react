@@ -32,7 +32,7 @@ class ResetPassword extends Component {
 	handleSubmit(evt) {
     evt.preventDefault();
     
-    fetch('http://172.16.96.208:8000/reset/password', {
+    fetch(`http://${this.props.baseURL}/reset/password`, {
       method: "POST",
       body: JSON.stringify({token: this.props.match.params.token, 
 														type: "password_submission",
@@ -55,7 +55,7 @@ class ResetPassword extends Component {
   
 
   componentDidMount(){
-    fetch('http://172.16.96.208:8000/reset/password', {
+    fetch(`http://${this.props.baseURL}/reset/password`, {
       method: "POST",
       body: JSON.stringify({token: this.props.match.params.token, type: "token_verification"}),
       headers: {
