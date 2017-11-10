@@ -53,7 +53,7 @@ class App extends Component {
           <div className="container" id="main">
             <Route path="/" exact component={Dashboard}/>
             <Route path="/auth/login" render={() => <Login baseURL={this.state.baseURL} handleLogin={this.handleLogin}/>}/>
-            <Route path="/auth/register" render={() => <Register baseURL={this.state/>}/>
+            <Route path="/auth/register" render={() => <Register baseURL={this.state}/>}/>
             <Route path="/auth/verify/email/:token" render={() => <VerifyEmail baseURL={this.state.baseURL}/>}/>
             <Route path="/auth/reset/password/:token" render={() => <ResetPassword baseURL={this.state.baseURL}/>}/>
             <Route path="/profile" render={() => <Profile user={this.state.user}/>}/>
