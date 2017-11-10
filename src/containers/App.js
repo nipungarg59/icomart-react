@@ -51,7 +51,7 @@ class App extends Component {
             handleLogout={this.handleLogout}/>
 
           <div className="container" id="main">
-            <Route path="/" exact component={Dashboard}/>
+            <Route path="/" exact render={() => <Dashboard baseURL={this.state.baseURL}/>}/>
             <Route path="/auth/login" render={() => <Login baseURL={this.state.baseURL} handleLogin={this.handleLogin}/>}/>
             <Route path="/auth/register" render={() => <Register baseURL={this.state}/>}/>
             <Route path="/auth/verify/email/:token" render={() => <VerifyEmail baseURL={this.state.baseURL}/>}/>
