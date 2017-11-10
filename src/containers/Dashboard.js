@@ -4,6 +4,17 @@ import { Jumbotron, Tabs, Tab } from 'react-bootstrap'
 import './Dashboard.css'
 
 class Dashboard extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      trending: [],
+      upcoming: [],
+      ongoing: [],
+      recent: []
+    }
+  }
+
   render() {
     return (
       <div>
