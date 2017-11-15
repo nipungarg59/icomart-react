@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {withRouter} from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 class VerifyEmail extends Component {
   
@@ -14,13 +14,13 @@ class VerifyEmail extends Component {
         if(res.result===false){
 
           if (res.message.includes("exists")){
-            this.props.history.push("/auth/login?ref=email_INVAL");
+            this.props.history.push("/auth/login?ref=email_INVAL")
           } else{
-            this.props.history.push("/auth/login?ref=email_EXP"); 
+            this.props.history.push("/auth/login?ref=email_EXP")
           }
 
         } else{
-          this.props.history.push("/auth/login?ref=email_VAL"); //
+          this.props.history.push("/auth/login?ref=email_VAL")
         }
 
       })
