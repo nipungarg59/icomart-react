@@ -69,7 +69,7 @@ class Register extends Component {
 
   handleSubmit(evt) {
     evt.preventDefault();
-    fetch('http://172.16.96.208:8000/signup', {
+    fetch(`http://${this.props.baseURL}/signup`, {
       method: "POST",
       body: JSON.stringify(removeBlanks(this.state)),
       headers: {
@@ -102,13 +102,6 @@ class Register extends Component {
             placeholder="Doe"
             value={this.state.last_name}
             onChange={this.handleChangeLastName}/>
-        </FormGroup>
-        <FormGroup controlId="registerDateOfBirth">
-          <ControlLabel>Date of Birth</ControlLabel>
-          <FormControl
-            type="date"
-            value={this.state.date_of_birth}
-            onChange={this.handleChangeDateOfBirth}/>
         </FormGroup>
         <FormGroup controlId="registerEmail">
           <ControlLabel>Email</ControlLabel>

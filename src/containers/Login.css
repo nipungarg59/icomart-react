@@ -1,3 +1,45 @@
 input {
   min-width: 250px;
 }
+
+.block {
+  display:block;
+  padding: 15px 30px 15px 15px;
+  margin: 0 0 20px;
+  position: relative;
+
+  font-family: Georgia, serif;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #666;
+  text-align: justify;
+  
+  -moz-box-shadow: 2px 2px 15px #ccc;
+  -webkit-box-shadow: 2px 2px 15px #ccc;
+  box-shadow: 2px 2px 15px #ccc;
+}
+
+.block-green {
+  background: #E8F5E9;
+  border-left: 15px solid #81C784;
+  border-right: 2px solid #81C784;
+}
+
+.block-red {
+  background: #FFEBEE;
+  border-left: 15px solid #E57373;
+  border-right: 2px solid #E57373;
+}
+
+.block-none {
+  display: none;
+}
+
+.cross {
+  position:absolute;
+  top:0;
+  right:0;
+  margin:12px;
+  color:grey;
+  cursor: pointer;
+}
