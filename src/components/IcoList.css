@@ -1,0 +1,16 @@
+.hidden {
+	display: none;
+}
+
+.ico-card {
+	margin-bottom: 20px;
+}
+
+.ico-card-main {
+	margin-bottom: 0px;
+}
+
+.ico-card-btn {
+	width :100%;
+	border-radius: 0px;
+}

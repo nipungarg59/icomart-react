@@ -7,6 +7,7 @@ import {
 import Login from './Login'
 import Register from './Register'
 import Publish from './Publish'
+import Admin from './Admin'
 import Profile from '../components/Profile'
 import VerifyEmail from '../components/VerifyEmail'
 import ResetPassword from '../components/ResetPassword'
@@ -29,6 +30,17 @@ class App extends Component {
 
   handleLogin(data) {
     this.setState({ ...data })
+    localStorage.setItem('session_id', data.session_id)
+    localStorage.setItem('user', JSON.stringify(data.user))
+  }
+
+  componentWillMount() {
+    if(localStorage.getItem("session_id")) {
+      this.setState({
+        session_id : localStorage.getItem("session_id"),
+        user : JSON.parse(localStorage.getItem("user"))
+      })
+    }
   }
 
   handleLogout() {
@@ -60,6 +72,7 @@ class App extends Component {
             <Route path="/profile" render={() => <Profile user={this.state.user}/>}/>
             <Route path="/ico/publish" render={() => <Publish baseURL={this.state.baseURL} session_id={this.state.session_id}/>}/>
             <Route path="/upload/file" render={() => <Upload baseURL={this.state.baseURL} session_id={this.state.session_id}/>}/>
+            <Route path="/admin" exact render={() => <Admin baseURL={this.state.baseURL} session_id={this.state.session_id}/>}/>
           </div>
         </div>
       </Router>

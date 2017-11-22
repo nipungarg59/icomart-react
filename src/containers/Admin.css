@@ -1,0 +1,8 @@
+.admin {
+	margin-top: 60px;
+}
+
+.tabs li {
+    display:table-cell !important;
+    width : 10%;
+}
