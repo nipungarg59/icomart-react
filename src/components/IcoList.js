@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { Row, Col, Panel } from 'react-bootstrap'
-import { withRouter } from "react-router-dom"
 import './IcoList.css'
-
 
 class IcoList extends Component {
   constructor(props) {
