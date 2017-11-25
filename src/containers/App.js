@@ -13,6 +13,7 @@ import VerifyEmail from '../components/VerifyEmail'
 import ResetPassword from '../components/ResetPassword'
 import Dashboard from './Dashboard'
 import Navbar from '../components/Navbar'
+import Upload from '../components/Upload'
 
 import './App.css'
 
@@ -71,6 +72,8 @@ class App extends Component {
             <Route path="/profile" render={() => <Profile user={this.state.user}/>}/>
             <Route path="/ico/publish" render={() => <Publish baseURL={this.state.baseURL} session_id={this.state.session_id}/>}/>
             <Route path="/admin" exact render={() => <Admin baseURL={this.state.baseURL} session_id={this.state.session_id}/>}/>
+
+            <Route path="/upload" component={Upload}/>
           </div>
         </div>
       </Router>
