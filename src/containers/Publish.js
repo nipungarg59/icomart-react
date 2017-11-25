@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Form, FormGroup, ControlLabel, FormControl } from 'react-bootstrap'
 
+import Upload from '../components/Upload'
+
 class Publish extends Component {
   constructor(props) {
     super(props)
@@ -65,6 +67,10 @@ class Publish extends Component {
     this.setState({ categories: evt.target.value })
   }
 
+  handleImageDrop(url) {
+    console.log(url)
+  }
+
   handleSubmit(evt) {
     evt.preventDefault();
     const categories = this.state.categories.split(',')
@@ -95,6 +101,10 @@ class Publish extends Component {
           <FormGroup controlId="publish-ico-name">
             <ControlLabel>ICO Name</ControlLabel>
             <FormControl type="text" value={this.state.ico_name} onChange={this.handleChangeIcoName}/>
+          </FormGroup>
+          <FormGroup controlId="publish-ico-image">
+            <ControlLabel>ICO Image</ControlLabel>
+            <Upload action={this.handleImageDrop} />
           </FormGroup>
           <FormGroup controlId="publish-short-description">
             <ControlLabel>Short Description</ControlLabel>
