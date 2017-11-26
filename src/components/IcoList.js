@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import { Row, Col, Panel } from 'react-bootstrap'
+
+import Card from './Card'
+
 import './IcoList.css'
 
 class IcoList extends Component {
@@ -63,14 +66,7 @@ class IcoList extends Component {
             this.state.data ?
               this.state.data.map((ico, i) =>
                 <Col key={i} xs={12} sm={6} md={4} lg={3}>
-                  <div className="ico-card">
-                    <Panel className="ico-card-main" header={<h1 className="text-center">{ico.ico_name}</h1>}>
-                      {ico.short_description}
-                    </Panel>
-                    <div className={this.state.showButton}>
-                      <button className={this.state.buttonClass} value={i} onClick={this.handelButtonClick}>{this.state.buttonText}</button>
-                    </div>
-                  </div>
+                  <Card ico={ico} />
                 </Col>
               ) :
               <h3>Not Found</h3>
