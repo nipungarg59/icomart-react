@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Jumbotron, Tabs, Tab, Grid } from 'react-bootstrap'
 
 import IcoList from '../components/IcoList'
+import Team from '../components/Team'
 
 import './Dashboard.css'
 
@@ -63,26 +64,29 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <Grid>
-        <Jumbotron>
-          <h1>ICO Farm</h1>
-          <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-        </Jumbotron>
-        <Tabs bsStyle="pills" defaultActiveKey={1} id="tabs-ico" onSelect={this.handleTab}>
-          <Tab eventKey={1} title="Trending">
-            <IcoList title="Trending" data={this.state.trending}/>
-          </Tab>
-          <Tab eventKey={2} title="Upcoming">
-            <IcoList title="Upcoming" data={this.state.upcoming}/>
-          </Tab>
-          <Tab eventKey={3} title="Ongoing">
-            <IcoList title="Ongoing" data={this.state.ongoing}/>
-          </Tab>
-          <Tab eventKey={4} title="Recent">
-            <IcoList title="Recent" data={this.state.recent} />
-          </Tab>
-        </Tabs>
-      </Grid>
+      <div>
+        <Grid>
+          <Jumbotron>
+            <h1>ICO Farm</h1>
+            <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+          </Jumbotron>
+          <Tabs bsStyle="pills" defaultActiveKey={1} id="tabs-ico" onSelect={this.handleTab}>
+            <Tab eventKey={1} title="Trending">
+              <IcoList title="Trending" data={this.state.trending}/>
+            </Tab>
+            <Tab eventKey={2} title="Upcoming">
+              <IcoList title="Upcoming" data={this.state.upcoming}/>
+            </Tab>
+            <Tab eventKey={3} title="Ongoing">
+              <IcoList title="Ongoing" data={this.state.ongoing}/>
+            </Tab>
+            <Tab eventKey={4} title="Recent">
+              <IcoList title="Recent" data={this.state.recent} />
+            </Tab>
+          </Tabs>
+        </Grid>
+        <Team/>
+      </div>
     )
   }
 }

@@ -63,7 +63,7 @@ class App extends Component {
             username={this.state.user ? this.state.user.username : undefined}
             handleLogout={this.handleLogout}/>
 
-          <div className="container" id="main">
+          <div id="main">
             <Route path="/" exact render={() => <Dashboard baseURL={this.state.baseURL}/>}/>
             <Route path="/auth/login" render={() => <Login baseURL={this.state.baseURL} handleLogin={this.handleLogin}/>}/>
             <Route path="/auth/register" render={() => <Register baseURL={this.state.baseURL}/>}/>
