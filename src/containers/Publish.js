@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Form, FormGroup, ControlLabel, FormControl } from 'react-bootstrap'
+import { Form, FormGroup, ControlLabel, FormControl, Col } from 'react-bootstrap'
 
 import Upload from '../components/Upload'
+import './Publish.css'
 
 class Publish extends Component {
   constructor(props) {
@@ -12,11 +13,13 @@ class Publish extends Component {
       short_description: '',
       start_date: '',
       close_date: '',
+      img_url: '',
       country: '',
       percent_distribution_of_token: '',
       price_per_token: '',
       company_website_link: '',
-      categories: ''
+      categories: [],
+      fetched_categories : []
     }
 
     this.handleChangeCategories = this.handleChangeCategories.bind(this)
@@ -29,6 +32,15 @@ class Publish extends Component {
     this.handleChangeShortDescription = this.handleChangeShortDescription.bind(this)
     this.handleChangeStartDate = this.handleChangeStartDate.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleChangeCheckbox = this.handleChangeCheckbox.bind(this)
+    this.handleImageDrop = this.handleImageDrop.bind(this)
+  }
+
+  componentDidMount() {
+
+    fetch(`http://${this.props.baseURL}/get/ico/categories`).then(res => res.json()).then(res => {
+      this.setState({fetched_categories : res.categories})
+    })
   }
 
   handleChangeIcoName(evt) {
@@ -68,16 +80,17 @@ class Publish extends Component {
   }
 
   handleImageDrop(url) {
-    console.log(url)
+    // console.log(url)
+    this.setState({ img_url : url})
   }
 
   handleSubmit(evt) {
     evt.preventDefault();
-    const categories = this.state.categories.split(',')
-    console.log({ ...this.state, categories })
+    // const categories = this.state.categories.split(',')
+    // console.log({ ...this.state})
     fetch(`http://${this.props.baseURL}/publish/ico`, {
       method: "POST",
-      body: JSON.stringify({ ...this.state, categories }),
+      body: JSON.stringify({ ...this.state}),
       headers: {
         "Content-Type": "application/json",
         "SESSIONID": this.props.session_id
@@ -91,9 +104,22 @@ class Publish extends Component {
     })
   }
 
+
+  handleChangeCheckbox(evt) {
+    // console.log("handleChangeCheckbox ", evt, evt.target.checked, evt.target.value)
+    let cat_set = new Set(this.state.categories)
+    if(evt.target.checked) {
+      cat_set.add(evt.target.value)
+    }
+    else {
+      cat_set.delete(evt.target.value)
+    }
+    this.setState({categories : [...cat_set]})
+  }
+
   render() {
     return (
-      <div>
+      <div id="publish">
         <div className="jumbotron">
           <h1>Publish new ICO</h1>
         </div>
@@ -136,7 +162,17 @@ class Publish extends Component {
           </FormGroup>
           <FormGroup controlId="publish-categories">
             <ControlLabel>Categories</ControlLabel>
-            <FormControl type="text" value={this.state.categories} onChange={this.handleChangeCategories} />
+            <br/>
+            {
+              this.state.fetched_categories ?
+                this.state.fetched_categories.map((category, i) =>
+                  <Col className="categories" key={i} xs={6} sm={6} md={5} lg={6}>
+                    <input type="checkbox" value={category} onChange={this.handleChangeCheckbox}/>
+                    <label >{category}</label>
+                  </Col>
+                ) :
+                <h3>Not Found</h3>
+            }
           </FormGroup>
           <FormGroup controlId="publish-submit">
             <FormControl type="submit" value="Publish" />

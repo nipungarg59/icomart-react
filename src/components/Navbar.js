@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap'
 import { LinkContainer } from 'react-router-bootstrap'
 
+
 const NavbarComponent = ({ username, handleLogout }) => (
   <Navbar fixedTop>
     <Navbar.Header>
@@ -36,6 +37,7 @@ const NavbarComponent = ({ username, handleLogout }) => (
         </Nav>
       }
     </Navbar.Collapse>
+    
   </Navbar>
 )
 

@@ -1,0 +1,8 @@
+#publish {
+  width: 70%;
+  padding: 0px;
+}
+
+.categories input {
+  min-width: 20px;
+}
