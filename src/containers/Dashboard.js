@@ -14,10 +14,12 @@ class Dashboard extends Component {
       trending: [],
       upcoming: [],
       ongoing: [],
-      recent: []
+      recent: [],
+      team : []
     }
 
     this.handleTab = this.handleTab.bind(this)
+    this.getTeamData = this.getTeamData.bind(this)
   }
 
   sendRequest(filter) {
@@ -62,6 +64,18 @@ class Dashboard extends Component {
     }
   }
 
+  getTeamData(){
+    fetch(`http://${this.props.baseURL}/admin/get/team/members`).then(res => res.json()).then(res => {
+      console.log(res)
+      this.setState({team : res.members})
+    })
+  }
+
+  componentDidMount() {
+    this.handleTab(1)
+    this.getTeamData()
+  }
+
   render() {
     return (
       <div>
@@ -85,7 +99,9 @@ class Dashboard extends Component {
             </Tab>
           </Tabs>
         </Grid>
-        <Team/>
+        <div >
+          <Team data={this.state.team}/>
+        </div>
       </div>
     )
   }

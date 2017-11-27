@@ -1,6 +1,19 @@
 import React from 'react'
 import './Team.css'
 
+const getRandomTeamClass =()=> {
+  let num = Math.floor(Math.random()*10)%3
+  if(num===0) {
+    return "teamy teamy_style1 teamy_mask-circle teamy_zoom-photo"
+  }
+  else if(num===1) {
+    return "teamy teamy_style1 teamy_mask-circle teamy_zoom-rotate-photo" 
+  }
+  else {
+    return "teamy teamy_style1 teamy_mask-circle teamy_zoom-slide-photo"
+  }
+}
+
 const Team = ({ data }) => (
   <div id="team">
     <div className="page">
@@ -10,133 +23,48 @@ const Team = ({ data }) => (
         <section className="section">
           <div className="main-container">
             <header className="section__header">
-              <h2><span class="highlight_secondary">Our</span> Team</h2>
+              <h2><span className="highlight_secondary">Our</span> Team</h2>
             </header>
             <div className="section__content teamy-team">
-              <article className="teamy teamy_style1 teamy_mask-circle teamy_zoom-photo">
-                <div className="teamy__layout">
-                  <div className="teamy__preview">
-                    <img src="https://stas-melnikov.ru/cliparts/girl2_424x640.jpg" className="teamy__avatar" alt="The demo"/>
-                  </div>
-                  <div className="teamy__back">
-                    <div className="teamy__back-inner">
-                      <div className="about">kfgnkdfkkmfdmskf kdmgjndf kdng jkdnfkfndk nfdkgn jdn sfndfksnk fjdngjf bfd bgfdnjkd fbgjfbd kfgnkdfkkmfdmskf kdmgjndf kdng jkdnfkfndk nfdkgn jdn sfndfksnk fjdngjf bfd bgfdnjkd fbgjfbd</div>
-                      
-                      <a href="#0" className="social">
-                       {/* <svg className="social__icon"><use xlink:href="#twitter"></use></svg>*/}
-                       <i className="fa fa-twitter social__icon fa-2x" aria-hidden="true"></i>
-                        <span className="social__name">Twitter</span>
-                      </a>
-                      <a href="#0" className="social">
-                        {/* <svg className="social__icon"><use xlink:href="#twitter"></use></svg>*/}
-                        <span className="social__name">Codepen</span>
-                      </a>
-                      <a href="#0" className="social">
-                        {/* <svg className="social__icon"><use xlink:href="#twitter"></use></svg>*/}
-                        <span className="social__name">LinkedIn</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className="teamy__content">
-                  <h3 className="teamy__name">Suzan Lois</h3>
-                  <span className="teamy__post">Graphic Designer</span>
-                </div>
-              </article>
 
-              <article className="teamy teamy_style1 teamy_mask-circle teamy_zoom-photo">
-                <div className="teamy__layout">
-                  <div className="teamy__preview">
-                    <img src="https://stas-melnikov.ru/cliparts/girl2_424x640.jpg" className="teamy__avatar" alt="The demo"/>
-                  </div>
-                  <div className="teamy__back">
-                    <div className="teamy__back-inner">
-                      <div className="about">kfgnkdfkkmfdmskf kdmgjndf kdng jkdnfkfndk nfdkgn jdn sfndfksnk fjdngjf bfd bgfdnjkd fbgjfbd kfgnkdfkkmfdmskf kdmgjndf kdng jkdnfkfndk nfdkgn jdn sfndfksnk fjdngjf bfd bgfdnjkd fbgjfbd</div>
-                      
-                      <a href="#0" className="social">
-                       {/* <svg className="social__icon"><use xlink:href="#twitter"></use></svg>*/}
-                       <i className="fa fa-twitter social__icon fa-2x" aria-hidden="true"></i>
-                        <span className="social__name">Twitter</span>
-                      </a>
-                      <a href="#0" className="social">
-                        {/* <svg className="social__icon"><use xlink:href="#twitter"></use></svg>*/}
-                        <span className="social__name">Codepen</span>
-                      </a>
-                      <a href="#0" className="social">
-                        {/* <svg className="social__icon"><use xlink:href="#twitter"></use></svg>*/}
-                        <span className="social__name">LinkedIn</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className="teamy__content">
-                  <h3 className="teamy__name">Suzan Lois</h3>
-                  <span className="teamy__post">Graphic Designer</span>
-                </div>
-              </article>
-
-              <article className="teamy teamy_style1 teamy_mask-circle teamy_zoom-photo">
-                <div className="teamy__layout">
-                  <div className="teamy__preview">
-                    <img src="https://stas-melnikov.ru/cliparts/girl2_424x640.jpg" className="teamy__avatar" alt="The demo"/>
-                  </div>
-                  <div className="teamy__back">
-                    <div className="teamy__back-inner">
-                      <div className="about">kfgnkdfkkmfdmskf kdmgjndf kdng jkdnfkfndk nfdkgn jdn sfndfksnk fjdngjf bfd bgfdnjkd fbgjfbd kfgnkdfkkmfdmskf kdmgjndf kdng jkdnfkfndk nfdkgn jdn sfndfksnk fjdngjf bfd bgfdnjkd fbgjfbd</div>
-                      
-                      <a href="#0" className="social">
-                       {/* <svg className="social__icon"><use xlink:href="#twitter"></use></svg>*/}
-                       <i className="fa fa-twitter social__icon fa-2x" aria-hidden="true"></i>
-                        <span className="social__name">Twitter</span>
-                      </a>
-                      <a href="#0" className="social">
-                        {/* <svg className="social__icon"><use xlink:href="#twitter"></use></svg>*/}
-                        <span className="social__name">Codepen</span>
-                      </a>
-                      <a href="#0" className="social">
-                        {/* <svg className="social__icon"><use xlink:href="#twitter"></use></svg>*/}
-                        <span className="social__name">LinkedIn</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className="teamy__content">
-                  <h3 className="teamy__name">Suzan Lois</h3>
-                  <span className="teamy__post">Graphic Designer</span>
-                </div>
-              </article>
-
-              <article className="teamy teamy_style1 teamy_mask-circle teamy_zoom-photo">
-                <div className="teamy__layout">
-                  <div className="teamy__preview">
-                    <img src="https://stas-melnikov.ru/cliparts/girl2_424x640.jpg" className="teamy__avatar" alt="The demo"/>
-                  </div>
-                  <div className="teamy__back">
-                    <div className="teamy__back-inner">
-                      <div className="about">kfgnkdfkkmfdmskf kdmgjndf kdng jkdnfkfndk nfdkgn jdn sfndfksnk fjdngjf bfd bgfdnjkd fbgjfbd kfgnkdfkkmfdmskf kdmgjndf kdng jkdnfkfndk nfdkgn jdn sfndfksnk fjdngjf bfd bgfdnjkd fbgjfbd</div>
-                      
-                      <a href="#0" className="social">
-                       {/* <svg className="social__icon"><use xlink:href="#twitter"></use></svg>*/}
-                       <i className="fa fa-twitter social__icon fa-2x" aria-hidden="true"></i>
-                        <span className="social__name">Twitter</span>
-                      </a>
-                      <a href="#0" className="social">
-                        {/* <svg className="social__icon"><use xlink:href="#twitter"></use></svg>*/}
-                        <span className="social__name">Codepen</span>
-                      </a>
-                      <a href="#0" className="social">
-                        {/* <svg className="social__icon"><use xlink:href="#twitter"></use></svg>*/}
-                        <span className="social__name">LinkedIn</span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div className="teamy__content">
-                  <h3 className="teamy__name">Suzan Lois</h3>
-                  <span className="teamy__post">Graphic Designer</span>
-                </div>
-              </article>
-              
+                {
+                  data.length ?
+                    data.map((member, i) =>
+                      <article className={getRandomTeamClass()}>
+                        <div className="teamy__layout">
+                          <div className="teamy__preview">
+                            <img src={member.image_url} className="teamy__avatar" alt={member.name}/>
+                          </div>
+                          <div className="teamy__back">
+                            <div className="teamy__back-inner">
+                              <div className="about">{member.description}</div>
+                              <a href={member.linkedin_url} className="social">
+                                <i className="fa fa-linkedin fa-2x social__icon" aria-hidden="true"></i>
+                                <span className="social__name">LinkedIn</span>
+                              </a>
+                              <a href={member.twitter_url} className="social">
+                                <i className="fa fa-twitter social__icon fa-2x" aria-hidden="true"></i>
+                                <span className="social__name">Twitter</span>
+                              </a>
+                              <a href={member.github_url} className="social">
+                                <i className="fa fa-github fa-2x social__icon" aria-hidden="true"></i>
+                                <span className="social__name">Github</span>
+                              </a>
+                              <a href={member.facebook_url} className="social">
+                                <i className="fa fa-facebook fa-2x social__icon" aria-hidden="true"></i>
+                                <span className="social__name">Facebook</span>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="teamy__content">
+                          <h3 className="teamy__name">{member.name}</h3>
+                          <span className="teamy__post">{member.designation}</span>
+                        </div>
+                      </article>
+                    ):    
+                    <h3>Not Found</h3>
+                }
             </div>
           </div>
         </section>
