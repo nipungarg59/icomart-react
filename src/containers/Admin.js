@@ -97,7 +97,7 @@ class Admin extends Component {
     
   render() {
     return(
-      <div className="admin">
+      <div className="container admin">
       	<Tabs bsStyle="pills" className="tabs" justified defaultActiveKey={1} id="admin-tabs-ico" onSelect={this.handleTab}>
           <Tab eventKey={1} title="Pending Icos">
             <IcoList title="Pending" data={this.state.pending} type="pending" handelButtonClick={this.handelButtonClick}/>

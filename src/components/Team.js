@@ -38,22 +38,38 @@ const Team = ({ data }) => (
                           <div className="teamy__back">
                             <div className="teamy__back-inner">
                               <div className="about">{member.description}</div>
-                              <a href={member.linkedin_url} className="social">
-                                <i className="fa fa-linkedin fa-2x social__icon" aria-hidden="true"></i>
-                                <span className="social__name">LinkedIn</span>
-                              </a>
-                              <a href={member.twitter_url} className="social">
-                                <i className="fa fa-twitter social__icon fa-2x" aria-hidden="true"></i>
-                                <span className="social__name">Twitter</span>
-                              </a>
-                              <a href={member.github_url} className="social">
-                                <i className="fa fa-github fa-2x social__icon" aria-hidden="true"></i>
-                                <span className="social__name">Github</span>
-                              </a>
-                              <a href={member.facebook_url} className="social">
-                                <i className="fa fa-facebook fa-2x social__icon" aria-hidden="true"></i>
-                                <span className="social__name">Facebook</span>
-                              </a>
+                              {
+                                member.linkedin_url ?
+                                  <a href={member.linkedin_url} className="social">
+                                    <i className="fa fa-linkedin fa-2x social__icon" aria-hidden="true"></i>
+                                    <span className="social__name">LinkedIn</span>
+                                  </a> :
+                                  <span/>
+                              }
+                              {
+                                member.twitter_url ?
+                                  <a href={member.twitter_url} className="social">
+                                    <i className="fa fa-twitter social__icon fa-2x" aria-hidden="true"></i>
+                                    <span className="social__name">Twitter</span>
+                                  </a>:
+                                  <span/>
+                              }
+                              {
+                                member.github_url ?
+                                  <a href={member.github_url} className="social">
+                                    <i className="fa fa-github fa-2x social__icon" aria-hidden="true"></i>
+                                    <span className="social__name">Github</span>
+                                  </a>:
+                                  <span/>
+                              }
+                              {
+                                member.facebook_url ?
+                                  <a href={member.facebook_url} className="social">
+                                    <i className="fa fa-facebook fa-2x social__icon" aria-hidden="true"></i>
+                                    <span className="social__name">Facebook</span>
+                                  </a>:
+                                  <span/>
+                              }
                             </div>
                           </div>
                         </div>

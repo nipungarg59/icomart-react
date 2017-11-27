@@ -86,57 +86,59 @@ class Register extends Component {
 
   render() {
     return (
-      <Form horizontal onSubmit={this.handleSubmit}>
-        <FormGroup controlId="registerFirstName">
-          <ControlLabel>First Name</ControlLabel>
-          <FormControl
-            type="text"
-            placeholder="John"
-            value={this.state.first_name}
-            onChange={this.handleChangeFirstName}/>
-        </FormGroup>
-        <FormGroup controlId="registerLastName">
-          <ControlLabel>Last Name</ControlLabel>
-          <FormControl
-            type="text"
-            placeholder="Doe"
-            value={this.state.last_name}
-            onChange={this.handleChangeLastName}/>
-        </FormGroup>
-        <FormGroup controlId="registerEmail">
-          <ControlLabel>Email</ControlLabel>
-          <FormControl
-            type="email"
-            placeholder="john.doe@example.com"
-            value={this.state.email}
-            onChange={this.handleChangeEmail}/>
-        </FormGroup>
-        <FormGroup controlId="registerPhone">
-          <ControlLabel>Phone Number</ControlLabel>
-          <FormControl
-            type="number"
-            value={this.state.phone_number}
-            onChange={this.handleChangePhoneNumber}/>
-        </FormGroup>
-        <FormGroup controlId="registerUsername">
-          <ControlLabel>Username</ControlLabel>
-          <FormControl
-            type="text"
-            placeholder="john.doe"
-            value={this.state.username}
-            onChange={this.handleChangeUsername}/>
-        </FormGroup>
-        <FormGroup controlId="registerPassword">
-          <ControlLabel>Password</ControlLabel>
-          <FormControl
-            type="password"
-            value={this.state.password}
-            onChange={this.handleChangePassword}/>
-        </FormGroup>
-        <FormGroup controlId="registerSubmit">
-          <FormControl type="submit" value="Register"/>
-        </FormGroup>
-      </Form>
+      <div id="register">
+        <Form horizontal onSubmit={this.handleSubmit}>
+          <FormGroup controlId="registerFirstName">
+            <ControlLabel>First Name</ControlLabel>
+            <FormControl
+              type="text"
+              placeholder="John"
+              value={this.state.first_name}
+              onChange={this.handleChangeFirstName}/>
+          </FormGroup>
+          <FormGroup controlId="registerLastName">
+            <ControlLabel>Last Name</ControlLabel>
+            <FormControl
+              type="text"
+              placeholder="Doe"
+              value={this.state.last_name}
+              onChange={this.handleChangeLastName}/>
+          </FormGroup>
+          <FormGroup controlId="registerEmail">
+            <ControlLabel>Email</ControlLabel>
+            <FormControl
+              type="email"
+              placeholder="john.doe@example.com"
+              value={this.state.email}
+              onChange={this.handleChangeEmail}/>
+          </FormGroup>
+          <FormGroup controlId="registerPhone">
+            <ControlLabel>Phone Number</ControlLabel>
+            <FormControl
+              type="number"
+              value={this.state.phone_number}
+              onChange={this.handleChangePhoneNumber}/>
+          </FormGroup>
+          <FormGroup controlId="registerUsername">
+            <ControlLabel>Username</ControlLabel>
+            <FormControl
+              type="text"
+              placeholder="john.doe"
+              value={this.state.username}
+              onChange={this.handleChangeUsername}/>
+          </FormGroup>
+          <FormGroup controlId="registerPassword">
+            <ControlLabel>Password</ControlLabel>
+            <FormControl
+              type="password"
+              value={this.state.password}
+              onChange={this.handleChangePassword}/>
+          </FormGroup>
+          <FormGroup controlId="registerSubmit">
+            <FormControl type="submit" value="Register"/>
+          </FormGroup>
+        </Form>
+      </div>
     )
   }
 }
