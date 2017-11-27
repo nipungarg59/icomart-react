@@ -2,13 +2,9 @@
   width: 100%;
 }
 
-.card-title {
-  text-align: center;
-}
-
 .card {
   border: 1px solid rgba(127, 127, 127, 0.5);
-  padding: 10px 0;
+  padding: 0 0 10px;
   border-radius: 5px;
 }
 
