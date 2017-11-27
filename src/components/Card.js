@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Button from './Button'
+
 import './Card.css';
 
 const time = (t) => {
@@ -24,6 +26,11 @@ const Card = ({ ico }) => (
     <h1 className="card-title text-center">{ico.ico_name}</h1>
     <h4 className="text-muted text-center">{time(new Date(ico.close_date) - new Date())} left</h4>
     <p className="card-body">{ico.short_description}</p>
+    <Button type="facebook" link={ico.facebook_link}/>
+    <Button type="github" link={ico.github_link} />
+    <Button type="medium" link={ico.medium_link} />
+    <Button type="telegram" link={ico.telegram_link} />
+    <Button type="youtube" link={ico.youtube_link} />
   </div>
 )
 
