@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './Button.css'
+
 const buttonTypes = (type) => {
   switch (type) {
     case 'facebook':
@@ -18,10 +20,10 @@ const buttonTypes = (type) => {
 }
 
 const Button = ({ link, type, text }) => (
-  <a href={link} style={{
+  <a className="button" href={link} style={{
     backgroundColor: '#' + buttonTypes(type).color,
     color: 'white',
-    padding: 5
+    padding: '2px 5px'
   }}>
     <i className={`fa fa-${buttonTypes(type).icon}`}></i>
   </a>
