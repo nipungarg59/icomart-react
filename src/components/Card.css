@@ -15,3 +15,12 @@
 .card-body {
   padding: 20px;
 }
+
+.card-deadline {
+  margin: 10px;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: center;
+}
