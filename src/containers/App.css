@@ -17,7 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  margin-top: -72px;
+  /*min-height: 100vh;*/
+  margin-top: 72px;
   left: 0;
 }

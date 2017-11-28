@@ -5,6 +5,7 @@ import {
   ControlLabel,
   FormControl
 } from 'react-bootstrap'
+import { withRouter } from "react-router-dom"
 
 import './Login.css'
 
@@ -41,7 +42,10 @@ class Login extends Component {
       headers: {
         "Content-Type": "application/json"
       },
-    }).then(res => res.json()).then(res => { this.props.handleLogin(res) })
+    }).then(res => res.json()).then(res => { 
+      this.props.handleLogin(res)
+      this.props.history.push("/")
+    })
   }
 
 
@@ -118,4 +122,4 @@ class Login extends Component {
   }
 }
 
-export default Login
+export default withRouter(Login)
