@@ -5,7 +5,8 @@ const styles = {
     display: 'flex',
     justifyContent: 'center',
     padding: '40px',
-    fontSize: '2em'
+    fontSize: '2em',
+    backgroundColor: '#AEB8C1',
   },
   button: {
     marginLeft: '10px'
