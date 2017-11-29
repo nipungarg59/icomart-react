@@ -14,6 +14,7 @@ import ResetPassword from '../components/ResetPassword'
 import Dashboard from './Dashboard'
 import Navbar from '../components/Navbar'
 import Upload from '../components/Upload'
+import Footer from '../components/Footer'
 
 import './App.css'
 
@@ -76,6 +77,8 @@ class App extends Component {
 
             <Route path="/upload" component={Upload}/>
           </div>
+
+          <Footer/>
         </div>
       </Router>
     )
