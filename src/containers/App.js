@@ -15,6 +15,7 @@ import Dashboard from './Dashboard'
 import Navbar from '../components/Navbar'
 import Upload from '../components/Upload'
 import Footer from '../components/Footer'
+import Newsletter from '../components/Newsletter'
 
 import './App.css'
 
@@ -78,6 +79,7 @@ class App extends Component {
             <Route path="/upload" component={Upload}/>
           </div>
 
+          <Newsletter/>
           <Footer/>
         </div>
       </Router>
