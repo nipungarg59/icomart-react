@@ -20,9 +20,17 @@ const time = (t) => {
   }
 }
 
+const timeString = (t) => {
+  if (t < 0) {
+    return `${time(-t)} ago`;
+  } else {
+    return `${time(t)} left`;
+  }
+}
+
 const Card = ({ ico }) => (
   <div className="card">
-    <h4 className="text-muted text-right card-deadline">{time(new Date(ico.close_date) - new Date())} left</h4>
+    <h4 className="text-muted text-right card-deadline">{timeString(new Date(ico.close_date) - new Date())}</h4>
     {ico.ico_name ? <img src={ico.img_url} alt={ico.ico_name} className="card-image"/> : ""}
     <h1 className="card-title text-center">{ico.ico_name}</h1>
     <p className="card-body">{ico.short_description}</p>

@@ -4,7 +4,7 @@
 
 .card {
   border: 1px solid rgba(127, 127, 127, 0.5);
-  padding: 0 0 10px;
+  padding: 10px 20px;
   border-radius: 5px;
 }
 
@@ -14,10 +14,6 @@
 
 .card-body {
   padding: 20px;
-}
-
-.card-deadline {
-  margin: 10px;
 }
 
 .card-buttons {
