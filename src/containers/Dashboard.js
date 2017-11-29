@@ -79,6 +79,7 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
+      sdfjhjsdnfj
         <Grid>
           <Jumbotron>
             <h1>ICO Farm</h1>

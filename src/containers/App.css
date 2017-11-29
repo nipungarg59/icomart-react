@@ -1,18 +1,18 @@
 #main {
-  /*display: flex;*/
+  /*display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-height: 100vh;*/
   margin-top: -72px;
-  left: 0;
+  /*left: 0;*/
 }
 
-#app {
+/*#app {
   width: 100vw;
   display: flex;
   flex-direction: column;
 }
-
+*/
 #publish, #register {
   display: flex;
   align-items: center;

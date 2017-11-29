@@ -41,6 +41,7 @@ class App extends Component {
         user : JSON.parse(localStorage.getItem("user"))
       })
     }
+    console.log(localStorage.getItem("session_id"), JSON.parse(localStorage.getItem("user")))
   }
 
   handleLogout() {
@@ -60,7 +61,7 @@ class App extends Component {
       <Router>
         <div id="app">
           <Navbar
-            username={this.state.user ? this.state.user.username : undefined}
+            user={this.state.user ? this.state.user : undefined}
             handleLogout={this.handleLogout}/>
 
           <div id="main">

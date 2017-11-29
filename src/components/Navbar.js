@@ -1,44 +1,133 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap'
-import { LinkContainer } from 'react-router-bootstrap'
+
+import './Navbar.css'
+import logo from '../images/output.png'
+
+class NavbarComponent extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      currentScrollHeight : 1
+    }
+  }
 
 
-const NavbarComponent = ({ username, handleLogout }) => (
-  <Navbar fixedTop>
-    <Navbar.Header>
-      <Navbar.Brand>
-        <Link to="/">ICO Farm</Link>
-      </Navbar.Brand>
-      <Navbar.Toggle/>
-    </Navbar.Header>
-    <Navbar.Collapse>
-      { username ?
-        <Nav pullRight>
-          <NavDropdown eventKey={1} title={username} id="dropdown-user">
-            <LinkContainer to="/profile">
-              <MenuItem eventKey={1.1}>Profile</MenuItem>
-            </LinkContainer>
-            <LinkContainer to="/ico/publish">
-              <MenuItem eventKey={1.2}>Publish ICO</MenuItem>
-            </LinkContainer>
-            <MenuItem divider/>
-            <MenuItem eventKey={1.3}>Account Settings</MenuItem>
-            <MenuItem eventKey={1.4} onClick={handleLogout}>Logout</MenuItem>
-          </NavDropdown>
-        </Nav>:
-        <Nav pullRight>
-          <LinkContainer to="/auth/login">
-            <NavItem eventKey={1}>Login</NavItem>
-          </LinkContainer>
-          <LinkContainer to="/auth/register">
-            <NavItem eventKey={2} href="#">Register</NavItem>
-          </LinkContainer>
-        </Nav>
+  componentDidMount() {      
+    window.onscroll =()=>{
+      const newScrollHeight = Math.ceil(window.scrollY/5) ;
+      if (this.state.currentScrollHeight !== newScrollHeight){
+          this.setState({currentScrollHeight: newScrollHeight})
+          console.log(newScrollHeight)
       }
-    </Navbar.Collapse>
+    }
+  }
+
+  renderButtons() {
+    const pathname = window.location.pathname.replace(/^\/+|\/+$/g, '')
+    if(this.props.user)
+    {
+      if(pathname==='')
+      {
+        return (
+          <ul className="nav navbar-nav navbar-right">
+            <li><a href="#top">Home</a></li>
+            <li><a href="#team">Our Team</a></li>
+            <li className="dropdown">
+              <a className="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">{this.props.user.username}<span className="caret"></span></a>
+              <ul className="dropdown-menu animated fadeInUp" role="menu">
+                <li><Link to="/profile">Profile</Link></li>
+                {
+                  this.props.user.user_type==='admin' ?
+                    <li><Link to="/admin">Admin Panel</Link></li> :
+                    <li></li>
+                }
+                <li><Link to="/ico/publish">Publish ICO</Link></li>
+                <li className="divider"></li>
+                <li><Link to="/">Account Settings</Link></li>
+                <li><a onClick={this.props.handleLogout}>Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        )
+      }
+      else if(pathname==='ico/publish' || pathname==='profile')
+      {
+        return (
+          <ul className="nav navbar-nav navbar-right">
+            <li><Link to="/">Home</Link></li>
+            <li className="dropdown">
+              <a className="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">{this.props.user.username}<span className="caret"></span></a>
+              <ul className="dropdown-menu animated fadeInUp" role="menu">
+                <li><Link to="/profile">Profile</Link></li>
+                <li><Link to="/ico/publish">Publish ICO</Link></li>
+                <li className="divider"></li>
+                <li><Link to="/">Account Settings</Link></li>
+                <li><a onClick={this.props.handleLogout}>Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        )
+      }
+    }
+    else {
+      if(pathname==='')
+      {
+        return (
+          <ul className="nav navbar-nav navbar-right">
+            <li><a href="#top">Home</a></li>
+            <li><a href="#team">Our Team</a></li>
+            <li><Link to="/auth/login"><span className="glyphicon glyphicon-log-in"></span> Login</Link></li>
+            <li><Link to="/auth/register">Register</Link></li>
+          </ul>
+        )
+      }
+      else if(pathname==='auth/login')
+      {
+        return (
+          <ul className="nav navbar-nav navbar-right">
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/auth/register">Register</Link></li>
+          </ul>
+        )
+      }
+      else if(pathname==='auth/register')
+      {
+        return (
+          <ul className="nav navbar-nav navbar-right">
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/auth/login"><span className="glyphicon glyphicon-log-in"></span> Login</Link></li>
+          </ul>
+        )
+      }
+    }
     
-  </Navbar>
-)
+  }
+
+  render() {
+    const opacity = Math.min(this.state.currentScrollHeight/100, 0.85)
+    return (
+      <div id="top">
+        <div className="container">
+          <nav className="navbar navbar-inverse navbar-default navbar-fixed-top" style={{backgroundColor: `rgba(44,44,44,${opacity})`}} >
+            <div className="container-fluid">
+              <div className="navbar-header">
+                <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span className="icon-bar"></span>
+                  <span className="icon-bar"></span>
+                  <span className="icon-bar"></span>                        
+                </button>
+                <a className="navbar-brand" onClick={()=>this.handelOnClick(1)} ><img src={logo}></img></a>
+              </div>
+              <div className="collapse navbar-collapse" id="myNavbar">
+              {this.renderButtons() }
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    )
+  }
+}
 
 export default NavbarComponent
