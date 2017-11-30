@@ -7,6 +7,7 @@ const styles = {
     padding: '40px',
     fontSize: '2em',
     backgroundColor: '#AEB8C1',
+    overflow: 'hidden',
   },
   button: {
     marginLeft: '10px'
