@@ -1,23 +1,32 @@
 import React from 'react'
 
 const styles = {
-  main: {
-    display: 'flex',
-    justifyContent: 'center',
+  outer: {
     padding: '40px',
     fontSize: '2em',
     backgroundColor: '#AEB8C1',
+  },
+  main: {
+    display: 'flex',
+    justifyContent: 'center',
     overflow: 'hidden',
+    padding: '40px',
   },
   button: {
-    marginLeft: '10px'
+    marginLeft: '10px',
+  },
+  header: {
+    color: 'white',
   }
 }
 
 const Newsletter = () => (
-  <div style={styles.main}>
-    <input type="email"/>
-    <button className="btn btn-primary" style={styles.button}>Subscribe to Newsletter</button>
+  <div style={styles.outer}>
+    <h3 style={styles.header} className="text-center">Subscribe to Newsletter</h3>
+    <div style={styles.main}>
+      <input type="email" />
+      <button className="btn btn-primary" style={styles.button}>Subscribe</button>
+    </div>
   </div>
 )
 
