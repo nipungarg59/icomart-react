@@ -105,7 +105,7 @@ class NavbarComponent extends Component {
   }
 
   render() {
-    const opacity = Math.min(this.state.currentScrollHeight/100, 0.85)
+    const opacity = Math.min(this.state.currentScrollHeight/100, 0.9)
     return (
       <div id="top">
         <div className="container">

@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { Jumbotron, Tabs, Tab, Grid } from 'react-bootstrap'
+import {Tabs, Tab, Grid } from 'react-bootstrap'
 
 import IcoList from '../components/IcoList'
 import Team from '../components/Team'
+import Main from '../components/Main'
 
 import './Dashboard.css'
 
@@ -79,12 +80,8 @@ class Dashboard extends Component {
   render() {
     return (
       <div>
-      sdfjhjsdnfj
+        <Main />
         <Grid>
-          <Jumbotron>
-            <h1>ICO Farm</h1>
-            <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-          </Jumbotron>
           <Tabs bsStyle="pills" defaultActiveKey={1} id="tabs-ico" onSelect={this.handleTab}>
             <Tab eventKey={1} title="Trending">
               <IcoList title="Trending" data={this.state.trending}/>

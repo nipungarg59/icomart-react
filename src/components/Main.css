@@ -1,0 +1,110 @@
+.main {
+  width : 100%;
+  min-height : 100vh;
+  background-image : linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url(https://kryptomoney.com/wp-content/uploads/2017/10/KryptoMoney.com-Abu-Dhabi-releases-ICO-regulations.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+}
+
+.main .publish-button a {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-top: 
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  width: 277px;
+  height: 50px;
+  font-size: 1em;
+  font-weight: bold;
+  line-height: 60px;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: transparent;
+  cursor: pointer;
+  text-decoration:none;
+  font-family: 'Roboto', sans-serif;
+  font-weight:900;
+  font-size:17px;
+  letter-spacing: 0.045em;
+}
+
+.btn svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.btn svg rect {
+  stroke-width: 4;
+  stroke-dasharray: 353, 0;
+  stroke-dashoffset: 0;
+  -webkit-transition: all 600ms ease;
+  transition: all 600ms ease;
+}
+
+.btn span{
+  background: rgb(255,130,130);
+  background: -moz-linear-gradient(left,  rgba(255,130,130,1) 0%, rgba(225,120,237,1) 100%);
+  background: -webkit-linear-gradient(left,  rgba(255,130,130,1) 0%,rgba(225,120,237,1) 100%);
+  background: linear-gradient(to right,  rgba(255,130,130,1) 0%,rgba(225,120,237,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8282', endColorstr='#e178ed',GradientType=1 );
+  
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn:hover svg rect {
+  stroke-width: 4;
+  stroke-dasharray: 196, 543;
+  stroke-dashoffset: 437;
+}
+
+.stats {
+  margin-top: 60px;
+  left: 0px ;
+  right: 0px;
+}
+
+.stats .row {
+  text-align: center;
+  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  color: #fefefe;
+  width: 100%;
+  margin: auto 0;
+}
+
+.purple {
+  background-color: rgba(39, 84, 186, 0.4);
+  padding-top: 15px;
+}
+
+.blue {
+  background-color: rgba(18, 57, 98, 0.5); 
+  padding-top: 15px;
+}
+
+.blue2 {
+  background-color: rgba(0, 174, 230, 0.5);
+  padding-top: 15px;
+}
+
+.stats .grid {
+  padding: 0;
+  margin:0;
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .purple, .blue2, .blue { height: 80px }
+}
