@@ -34,14 +34,14 @@ class IcoList extends Component {
     if(props.type==='approved')
     {
       state['showButton'] = ''
-      state['buttonText'] = 'DisApprove'
-      state['buttonClass'] = 'btn btn-danger ico-card-btn'
+      state['buttonText'] = 'Disapprove'
+      state['buttonClass'] = 'btn-danger'
     }
     else if(props.type==='pending')
     {
       state['showButton'] = ''
       state['buttonText'] = 'Approve'
-      state['buttonClass'] = 'btn btn-primary ico-card-btn'
+      state['buttonClass'] = 'btn-primary'
     }
     return state
   }
@@ -68,7 +68,7 @@ class IcoList extends Component {
                 <Col key={i} xs={12} sm={6} md={4} lg={3}>
                   <Card ico={ico} extra={
                     <div className={this.state.showButton}>
-                      <button className={this.state.buttonClass} value={i} onClick={this.handelButtonClick}>{this.state.buttonText}</button>
+                      <button className={`btn btn-block btn-lg ${this.state.buttonClass}`} value={i} onClick={this.handelButtonClick}>{this.state.buttonText}</button>
                     </div>
                   }/>
                 </Col>
