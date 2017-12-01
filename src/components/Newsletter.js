@@ -9,12 +9,20 @@ const styles = StyleSheet.create({
   },
   main: {
     display: 'flex',
+    flexDirection: 'column',
     justifyContent: 'center',
     overflow: 'hidden',
     padding: '40px',
+    '@media only screen and (min-width : 480px)': {
+      flexDirection: 'row',
+    }
   },
   button: {
-    marginLeft: '10px',
+    marginTop: 10,
+    '@media only screen and (min-width : 480px)': {
+      marginLeft: 10,
+      marginTop: 0,
+    },
   },
   header: {
     color: 'white',
