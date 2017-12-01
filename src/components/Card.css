@@ -3,13 +3,13 @@
 }
 
 .card {
-  border: 1px solid rgba(127, 127, 127, 0.5);
   padding: 10px 20px;
   border-radius: 5px;
+  background: whitesmoke;
 }
 
 .card:hover {
-  box-shadow: 1px 5px 15px rgba(127, 127, 127, 0.5);
+  box-shadow: 1px 5px 15px darkgray;
 }
 
 .card-body {
