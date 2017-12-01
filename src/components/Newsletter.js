@@ -1,6 +1,7 @@
 import React from 'react'
+import { StyleSheet, css } from 'aphrodite'
 
-const styles = {
+const styles = StyleSheet.create({
   outer: {
     padding: '40px',
     fontSize: '2em',
@@ -18,14 +19,14 @@ const styles = {
   header: {
     color: 'white',
   }
-}
+})
 
 const Newsletter = () => (
-  <div style={styles.outer}>
-    <h3 style={styles.header} className="text-center">Subscribe to Newsletter</h3>
-    <div style={styles.main}>
+  <div className={css(styles.outer)}>
+    <h3 className={`text-center ${css(styles.header)}`}>Subscribe to Newsletter</h3>
+    <div className={css(styles.main)}>
       <input type="email" />
-      <button className="btn btn-primary btn-lg" style={styles.button}>Subscribe</button>
+      <button className={`btn btn-primary btn-lg ${css(styles.button)}`}>Subscribe</button>
     </div>
   </div>
 )
