@@ -8,7 +8,8 @@ class NavbarComponent extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      currentScrollHeight : 1
+      currentScrollHeight : 1,
+      defaultOpacity : 0,
     }
   }
 
@@ -25,6 +26,20 @@ class NavbarComponent extends Component {
 
   renderButtons() {
     const pathname = window.location.pathname.replace(/^\/+|\/+$/g, '')
+    if(pathname==='')
+    {
+      if(this.state.defaultOpacity)
+      {
+        this.setState({defaultOpacity:0})
+      }
+    }
+    else
+    {
+      if(this.state.defaultOpacity===0)
+      {
+        this.setState({defaultOpacity:1})
+      }
+    }
     if(this.props.user)
     {
       if(pathname==='')
@@ -51,7 +66,7 @@ class NavbarComponent extends Component {
           </ul>
         )
       }
-      else if(pathname==='ico/publish' || pathname==='profile')
+      else if(pathname==='ico/publish' || pathname==='profile' || pathname==='admin')
       {
         return (
           <ul className="nav navbar-nav navbar-right">
@@ -105,7 +120,7 @@ class NavbarComponent extends Component {
   }
 
   render() {
-    const opacity = Math.min(this.state.currentScrollHeight/100, 0.9)
+    const opacity = Math.min(Math.max(this.state.currentScrollHeight/100,this.state.defaultOpacity), 0.9)
     return (
       <div id="top">
         <div className="container">
@@ -117,7 +132,7 @@ class NavbarComponent extends Component {
                   <span className="icon-bar"></span>
                   <span className="icon-bar"></span>                        
                 </button>
-                <a className="navbar-brand" onClick={()=>this.handelOnClick(1)} ><img src={logo}></img></a>
+                <a className="navbar-brand" href="/" ><img src={logo}></img></a>
               </div>
               <div className="collapse navbar-collapse" id="myNavbar">
               {this.renderButtons() }
