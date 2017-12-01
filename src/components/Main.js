@@ -9,7 +9,7 @@ const Main = ()=> (
     <div className="main">
       <div className="bottom">
         <div className="container publish-button">
-          <a href="/ico/publish" className="btn">
+          <a href="/ico/publish" className="btn bttn">
             <svg width="277" height="62">
               <defs>
                   <linearGradient id="grad1">

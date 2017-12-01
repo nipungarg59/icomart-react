@@ -19,7 +19,7 @@
   margin-top: 
 }
 
-.btn {
+.bttn {
   position: relative;
   display: inline-block;
   width: 277px;
@@ -38,13 +38,13 @@
   letter-spacing: 0.045em;
 }
 
-.btn svg {
+.bttn svg {
   position: absolute;
   top: 0;
   left: 0;
 }
 
-.btn svg rect {
+.bttn svg rect {
   stroke-width: 4;
   stroke-dasharray: 353, 0;
   stroke-dashoffset: 0;
@@ -52,7 +52,7 @@
   transition: all 600ms ease;
 }
 
-.btn span{
+.bttn span{
   background: rgb(255,130,130);
   background: -moz-linear-gradient(left,  rgba(255,130,130,1) 0%, rgba(225,120,237,1) 100%);
   background: -webkit-linear-gradient(left,  rgba(255,130,130,1) 0%,rgba(225,120,237,1) 100%);
@@ -63,7 +63,7 @@
   -webkit-text-fill-color: transparent;
 }
 
-.btn:hover svg rect {
+.bttn:hover svg rect {
   stroke-width: 4;
   stroke-dasharray: 196, 543;
   stroke-dashoffset: 437;
