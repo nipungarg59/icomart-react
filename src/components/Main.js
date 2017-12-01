@@ -7,6 +7,9 @@ import './Main.css'
 const Main = ()=> (
   <div id="mian">
     <div className="main">
+      <div className="main-text">
+        <span></span>
+      </div>
       <div className="bottom">
         <div className="container publish-button">
           <a href="/ico/publish" className="btn bttn">
