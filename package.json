@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "aphrodite": "^1.2.5",
     "react": "^16.0.0",
     "react-bootstrap": "^0.31.5",
     "react-count-to": "^0.10.0",
