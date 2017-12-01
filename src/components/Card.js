@@ -28,7 +28,7 @@ const timeString = (t) => {
   }
 }
 
-const Card = ({ ico }) => (
+const Card = ({ ico, extra }) => (
   <div className="card">
     <h4 className="text-muted text-right card-deadline">{timeString(new Date(ico.close_date) - new Date())}</h4>
     {ico.ico_name ? <img src={ico.img_url} alt={ico.ico_name} className="card-image"/> : ""}
@@ -40,6 +40,9 @@ const Card = ({ ico }) => (
       <Button type="medium" link={ico.medium_link} />
       <Button type="telegram" link={ico.telegram_link} />
       <Button type="youtube" link={ico.youtube_link} />
+    </div>
+    <div className="card-extra">
+      { extra }
     </div>
   </div>
 )

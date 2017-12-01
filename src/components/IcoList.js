@@ -66,7 +66,11 @@ class IcoList extends Component {
             this.state.data ?
               this.state.data.map((ico, i) =>
                 <Col key={i} xs={12} sm={6} md={4} lg={3}>
-                  <Card ico={ico} />
+                  <Card ico={ico} extra={
+                    <div className={this.state.showButton}>
+                      <button className={this.state.buttonClass} value={i} onClick={this.handelButtonClick}>{this.state.buttonText}</button>
+                    </div>
+                  }/>
                 </Col>
               ) :
               <h3>Not Found</h3>
