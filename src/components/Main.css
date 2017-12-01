@@ -16,7 +16,6 @@
   margin-left: auto;
   margin-right: auto;
   display: block;
-  margin-top: 
 }
 
 .bttn {
@@ -58,7 +57,7 @@
   background: -webkit-linear-gradient(left,  rgba(255,130,130,1) 0%,rgba(225,120,237,1) 100%);
   background: linear-gradient(to right,  rgba(255,130,130,1) 0%,rgba(225,120,237,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8282', endColorstr='#e178ed',GradientType=1 );
-  
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -86,17 +85,23 @@
 
 .purple {
   background-color: rgba(39, 84, 186, 0.4);
-  padding-top: 15px;
 }
 
 .blue {
-  background-color: rgba(18, 57, 98, 0.5); 
-  padding-top: 15px;
+  background-color: rgba(18, 57, 98, 0.5);
 }
 
 .blue2 {
   background-color: rgba(0, 174, 230, 0.5);
-  padding-top: 15px;
+}
+
+.row.is-flex {
+  display: flex;
+}
+
+.purple, .blue2, .blue {
+  font-size: 15px;
+  padding: 15px;
 }
 
 .stats .grid {
@@ -106,5 +111,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .purple, .blue2, .blue { height: 80px }
+  .purple, .blue2, .blue {
+    font-size: 24px;
+  }
 }

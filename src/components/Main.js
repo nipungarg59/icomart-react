@@ -24,14 +24,14 @@ const Main = ()=> (
         </div>
         <div className="stats">
           <Grid className="grid">
-            <Row className="row">
-              <Col xs={12} sm={4} md={4} lg={4} className="purple">
+            <Row className="is-flex">
+              <Col xs={4} className="purple">
                 <span>PAST &nbsp;&nbsp;<CountTo to={1234} speed={1234} /></span>
               </Col>
-              <Col xs={12} sm={4} md={4} lg={4} className="blue">
+              <Col xs={4} className="blue">
                 <span>ONGOING &nbsp;&nbsp;<CountTo to={1500} speed={1500} /></span>
               </Col>
-              <Col xs={12} sm={4} md={4} lg={4} className="blue2">
+              <Col xs={4} className="blue2">
                 <span>UPCOMING &nbsp;&nbsp;<CountTo to={2000} speed={2000} /></span>
               </Col>
             </Row>
