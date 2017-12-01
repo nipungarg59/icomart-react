@@ -25,7 +25,7 @@ const Newsletter = () => (
     <h3 style={styles.header} className="text-center">Subscribe to Newsletter</h3>
     <div style={styles.main}>
       <input type="email" />
-      <button className="btn btn-primary" style={styles.button}>Subscribe</button>
+      <button className="btn btn-primary btn-lg" style={styles.button}>Subscribe</button>
     </div>
   </div>
 )
