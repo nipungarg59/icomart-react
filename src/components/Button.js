@@ -1,6 +1,15 @@
 import React from 'react'
+import { StyleSheet, css } from 'aphrodite'
 
-import './Button.css'
+const styles = StyleSheet.create({
+  button: {
+    margin: 2,
+    fontSize: '1.2em',
+    borderRadius: 5,
+    color: 'white',
+    padding: '2px 5px',
+  }
+})
 
 const buttonTypes = (type) => {
   switch (type) {
@@ -20,11 +29,7 @@ const buttonTypes = (type) => {
 }
 
 const Button = ({ link, type, text }) => (
-  <a className="button" href={link} style={{
-    backgroundColor: '#' + buttonTypes(type).color,
-    color: 'white',
-    padding: '2px 5px'
-  }}>
+  <a className={css(styles.button)} href={link} style={{backgroundColor: `#${buttonTypes(type).color}`}}>
     <i className={`fa fa-${buttonTypes(type).icon}`}></i>
   </a>
 )
