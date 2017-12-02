@@ -1,8 +1,28 @@
 import React from 'react'
+import { StyleSheet, css } from 'aphrodite'
 
 import Button from './Button'
 
-import './Card.css';
+const styles = StyleSheet.create({
+  cardImage: {
+    width: '100%',
+  },
+  card: {
+    padding: '10px 20px',
+    borderRadius: 5,
+    background: 'whitesmoke',
+    ':hover': {
+      boxShadow: '1px 5px 15px darkgray',
+    },
+  },
+  cardBody: {
+    padding: 20,
+  },
+  cardButtons: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
+})
 
 const time = (t) => {
   if (t < 1000) {
@@ -29,19 +49,19 @@ const timeString = (t) => {
 }
 
 const Card = ({ ico, extra }) => (
-  <div className="card">
-    <h4 className="text-muted text-right card-deadline">{timeString(new Date(ico.close_date) - new Date())}</h4>
-    {ico.ico_name ? <img src={ico.img_url} alt={ico.ico_name} className="card-image"/> : ""}
-    <h1 className="card-title text-center">{ico.ico_name}</h1>
-    <p className="card-body">{ico.short_description}</p>
-    <div className="card-buttons">
+  <div className={css(styles.card)}>
+    <h4 className="text-muted text-right">{timeString(new Date(ico.close_date) - new Date())}</h4>
+    {ico.ico_name ? <img src={ico.img_url} alt={ico.ico_name} className={css(styles.cardImage)}/> : ""}
+    <h1 className="text-center">{ico.ico_name}</h1>
+    <p className={css(styles.cardBody)}>{ico.short_description}</p>
+    <div className={css(styles.cardButtons)}>
       <Button type="facebook" link={ico.facebook_link} />
       <Button type="github" link={ico.github_link} />
       <Button type="medium" link={ico.medium_link} />
       <Button type="telegram" link={ico.telegram_link} />
       <Button type="youtube" link={ico.youtube_link} />
     </div>
-    <div className="card-extra">
+    <div>
       { extra }
     </div>
   </div>
