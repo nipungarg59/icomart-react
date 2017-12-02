@@ -1,9 +1,9 @@
 .main {
   width : 100%;
   min-height : 100vh;
-  background-image : linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url(https://kryptomoney.com/wp-content/uploads/2017/10/KryptoMoney.com-Abu-Dhabi-releases-ICO-regulations.jpg);
-  background-size: cover;
-  background-position: center;
+  background: #0f0c29;
+  background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+  background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
 }
 
 .main-text {
