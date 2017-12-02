@@ -5,7 +5,8 @@ const styles = StyleSheet.create({
   outer: {
     padding: '40px',
     fontSize: '2em',
-    backgroundColor: '#AEB8C1',
+    background:'#1F1C2C',
+    background: 'linear-gradient(to left, #928DAB, #1F1C2C)'
   },
   main: {
     display: 'flex',
