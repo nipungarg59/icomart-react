@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
   },
   card: {
     padding: '10px 20px',
+    margin: '10px 0',
     borderRadius: 5,
     background: 'whitesmoke',
     ':hover': {
