@@ -18,6 +18,9 @@ const styles = StyleSheet.create({
   },
   cardBody: {
     padding: 20,
+    overflowWrap: 'break-word',
+    wordWrap: 'break-word',
+    hyphens: 'auto',
   },
   cardButtons: {
     display: 'flex',
