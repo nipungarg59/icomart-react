@@ -16,11 +16,13 @@ class Dashboard extends Component {
       upcoming: [],
       ongoing: [],
       recent: [],
-      team : []
+      team : [],
+      tab: 3
     }
 
     this.handleTab = this.handleTab.bind(this)
     this.getTeamData = this.getTeamData.bind(this)
+    this.onSetTab = this.onSetTab.bind(this)
   }
 
   sendRequest(filter) {
@@ -73,29 +75,36 @@ class Dashboard extends Component {
   }
 
   componentDidMount() {
-    this.handleTab(1)
+    this.handleTab(this.state.tab)
     this.getTeamData()
+  }
+
+  onSetTab(tab) {
+    this.setState({ tab })
+    this.handleTab(tab)
   }
 
   render() {
     return (
       <div>
-        <Main />
+        <Main onSelectTab={this.onSetTab}/>
         <Grid>
-          <Tabs bsStyle="pills" defaultActiveKey={1} id="tabs-ico" onSelect={this.handleTab}>
-            <Tab eventKey={1} title="Trending">
-              <IcoList title="Trending" data={this.state.trending}/>
-            </Tab>
-            <Tab eventKey={2} title="Upcoming">
-              <IcoList title="Upcoming" data={this.state.upcoming}/>
-            </Tab>
-            <Tab eventKey={3} title="Ongoing">
-              <IcoList title="Ongoing" data={this.state.ongoing}/>
-            </Tab>
-            <Tab eventKey={4} title="Recent">
-              <IcoList title="Recent" data={this.state.recent} />
-            </Tab>
-          </Tabs>
+          <Tab.Container id="tabs-ico" activeKey={this.state.tab}>
+            <Tab.Content animation>
+              <Tab.Pane eventKey={1}>
+                <IcoList title="Trending" data={this.state.trending} />
+              </Tab.Pane>
+              <Tab.Pane eventKey={2}>
+                <IcoList title="Upcoming" data={this.state.upcoming} />
+              </Tab.Pane>
+              <Tab.Pane eventKey={3}>
+                <IcoList title="Ongoing" data={this.state.ongoing} />
+              </Tab.Pane>
+              <Tab.Pane eventKey={4}>
+                <IcoList title="Recent" data={this.state.recent}/>
+              </Tab.Pane>
+            </Tab.Content>
+          </Tab.Container>
         </Grid>
         <div >
           <Team data={this.state.team}/>

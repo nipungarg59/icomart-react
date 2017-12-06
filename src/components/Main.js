@@ -4,7 +4,7 @@ import CountTo from 'react-count-to'
 
 import './Main.css'
 
-const Main = ()=> (
+const Main = ({ onSelectTab }) => (
   <div id="mian">
     <div className="main">
       <div className="main-text">
@@ -28,13 +28,13 @@ const Main = ()=> (
         <div className="stats">
           <Grid className="grid">
             <Row className="is-flex">
-              <Col xs={4} className="purple">
+              <Col xs={4} className="purple" onClick={() => onSelectTab(2)}>
                 <span>PAST &nbsp;&nbsp;<CountTo to={1234} speed={1234} /></span>
               </Col>
-              <Col xs={4} className="blue">
+              <Col xs={4} className="blue" onClick={() => onSelectTab(3)}>
                 <span>ONGOING &nbsp;&nbsp;<CountTo to={1500} speed={1500} /></span>
               </Col>
-              <Col xs={4} className="blue2">
+              <Col xs={4} className="blue2" onClick={() => onSelectTab(4)}>
                 <span>UPCOMING &nbsp;&nbsp;<CountTo to={2000} speed={2000} /></span>
               </Col>
             </Row>
