@@ -28,13 +28,13 @@ const Main = ({ onSelectTab }) => (
         <div className="stats">
           <Grid className="grid">
             <Row className="is-flex">
-              <Col xs={4} className="purple" onClick={() => onSelectTab(2)}>
+              <Col xs={4} className="purple" onClick={() => onSelectTab(4)}>
                 <span>PAST &nbsp;&nbsp;<CountTo to={1234} speed={1234} /></span>
               </Col>
               <Col xs={4} className="blue" onClick={() => onSelectTab(3)}>
                 <span>ONGOING &nbsp;&nbsp;<CountTo to={1500} speed={1500} /></span>
               </Col>
-              <Col xs={4} className="blue2" onClick={() => onSelectTab(4)}>
+              <Col xs={4} className="blue2" onClick={() => onSelectTab(2)}>
                 <span>UPCOMING &nbsp;&nbsp;<CountTo to={2000} speed={2000} /></span>
               </Col>
             </Row>
