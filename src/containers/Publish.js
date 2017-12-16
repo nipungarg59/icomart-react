@@ -26,8 +26,8 @@ class Publish extends Component {
       ico_name: '',
       short_description: '',
       description : '',
-      start_date: '',
-      close_date: '',
+      start_date: new Date(),
+      close_date: new Date(),
       img_url: '',
       country: '',
       percent_distribution_of_token: '',
@@ -292,7 +292,7 @@ class Publish extends Component {
                         <span></span>
                     }
                     <RaisedButton  label="Select Categories" onClick={this.handleOpenDialog}/>
-                    <Dialog contentClassName="dialogContent" bodyClassName="dialogBody" title="Select Categories" actions={categoriesActions} modal={false} open={this.state.categoryDialogOpen} onRequestClose={this.handleCloseDialog}>
+                    <Dialog contentClassName="dialogContent" bodyClassName="dialogBody" title="Select Categories" actions={categoriesActions} modal={false} open={this.state.categoryDialogOpen} onRequestClose={this.handleCloseDialog} autoScrollBodyContent={true}>
                       {
                         categories.length ?
                           categories.map((category, i) =>
