@@ -1,8 +1,104 @@
-#publish {
-  width: 70%;
-  padding: 0px;
+.heading {
+  text-align: center;
+  font-family: Roboto sans-serif;
+  background: #a770ef; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #a770ef, #cf8bf3, #fdb99b); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #a770ef, #cf8bf3, #fdb99b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.categories input {
-  min-width: 20px;
+.heading h1 {
+  margin-top: 0;
+  padding-top: 80px;
+  color: white;
+}
+
+.line {
+  margin: auto;
+  background: white;
+  height: 1.5px;
+  width: 23%;
+  max-width: 180px;
+
+}
+
+.space {
+  padding-bottom: 80px;
+}
+
+.panel {
+  align-items: center;
+  justify-content: center;
+  margin: 72px auto;
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 15px 25px rgba(0,0,0,.4);
+}
+
+@media only screen and (max-width: 420px) {
+  .panel {
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .xyz {
+    margin-left: 0px !important;
+  }
+}
+
+@media only screen and (min-width: 420px) and (max-width: 520px) {
+  .panel {
+    width: 95%;
+  }
+}
+
+@media only screen and (min-width: 520px) and (max-width: 620px) {
+  .panel {
+    width: 90%;
+  }
+}
+
+.xyz {
+  margin-left: 10px;
+}
+
+.xyz text {
+  font-size: 12px;
+}
+
+.xyz label {
+  font-weight: normal;
+  font-size: 16px;
+}
+
+.xyz .customfield {
+  margin-top : 16px;
+  margin-bottom: 8px;
+}
+
+.xyz .customfield label {
+  font-weight: bold;
+}
+
+.xyz .customfield label span {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.xyz .chip-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 400px) {
+  .dialogContent {
+    width: 100% !important;
+  }
+
+  .dialogBody {
+    padding: 0px !important; 
+  }
 }

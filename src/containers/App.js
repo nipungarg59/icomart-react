@@ -19,6 +19,7 @@ import Newsletter from '../components/Newsletter'
 
 import './App.css'
 
+
 class App extends Component {
   constructor(props) {
     super(props)

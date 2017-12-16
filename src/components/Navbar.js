@@ -26,7 +26,7 @@ class NavbarComponent extends Component {
 
   renderButtons() {
     const pathname = window.location.pathname.replace(/^\/+|\/+$/g, '')
-    if(pathname==='')
+    if(pathname==='' || pathname==='ico/publish')
     {
       if(this.state.defaultOpacity)
       {

@@ -14,10 +14,15 @@ const onDrop = (action, file) => {
   })
 }
 
-const Upload = ({ action }) => (
+const Upload = ({ action, url }) => (
   <div className="dropzone">
     <Dropzone onDrop={files => onDrop(action, files[0])}>
-      <p>Try dropping some files here, or click to select files to upload.</p>
+      {
+        url ?
+          <img src={url} style={{'width': '200px', 'height' : '200px'}}/>
+        :
+        <p>Try dropping some files here, or click to select files to upload.</p>
+      }
     </Dropzone>
   </div>
 )
