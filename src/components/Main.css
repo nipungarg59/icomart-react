@@ -145,6 +145,7 @@
 .blue {
   font-size: 15px;
   padding: 15px;
+  cursor: pointer;
 }
 
 .stats .grid {
