@@ -1,6 +1,6 @@
 .main {
-  width : 100%;
-  min-height : 100vh;
+  width: 100%;
+  min-height: 100vh;
   background: #0f0c29;
   background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
   background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
@@ -10,12 +10,12 @@
   padding-top: 100px;
   font-size: 60px;
   text-align: center;
-  color : white;
-  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  color: white;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .main-text span::after {
-  content:"";
+  content: "";
   animation: change-text 5s linear infinite;
 }
 
@@ -55,10 +55,10 @@
   text-transform: uppercase;
   background-color: transparent;
   cursor: pointer;
-  text-decoration:none;
-  font-family: 'Roboto', sans-serif;
-  font-weight:900;
-  font-size:17px;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-size: 17px;
   letter-spacing: 0.045em;
 }
 
@@ -76,12 +76,28 @@
   transition: all 600ms ease;
 }
 
-.bttn span{
-  background: rgb(255,130,130);
-  background: -moz-linear-gradient(left,  rgba(255,130,130,1) 0%, rgba(225,120,237,1) 100%);
-  background: -webkit-linear-gradient(left,  rgba(255,130,130,1) 0%,rgba(225,120,237,1) 100%);
-  background: linear-gradient(to right,  rgba(255,130,130,1) 0%,rgba(225,120,237,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8282', endColorstr='#e178ed',GradientType=1 );
+.bttn span {
+  background: rgb(255, 130, 130);
+  background: -moz-linear-gradient(
+    left,
+    rgba(255, 130, 130, 1) 0%,
+    rgba(225, 120, 237, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    left,
+    rgba(255, 130, 130, 1) 0%,
+    rgba(225, 120, 237, 1) 100%
+  );
+  background: linear-gradient(
+    to right,
+    rgba(255, 130, 130, 1) 0%,
+    rgba(225, 120, 237, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(
+      startColorstr="#ff8282",
+      endColorstr="#e178ed",
+      GradientType=1
+    );
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -95,13 +111,13 @@
 
 .stats {
   margin-top: 60px;
-  left: 0px ;
+  left: 0px;
   right: 0px;
 }
 
 .stats .row {
   text-align: center;
-  font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 24px;
   color: #fefefe;
   width: 100%;
@@ -124,19 +140,23 @@
   display: flex;
 }
 
-.purple, .blue2, .blue {
+.purple,
+.blue2,
+.blue {
   font-size: 15px;
   padding: 15px;
 }
 
 .stats .grid {
   padding: 0;
-  margin:0;
+  margin: 0;
   width: 100%;
 }
 
 @media only screen and (min-width: 768px) {
-  .purple, .blue2, .blue {
+  .purple,
+  .blue2,
+  .blue {
     font-size: 24px;
   }
 }
