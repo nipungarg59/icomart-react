@@ -1,43 +1,47 @@
-import React from 'react'
-import { StyleSheet, css } from 'aphrodite'
+import React from "react";
+import { StyleSheet, css } from "aphrodite";
 
 const styles = StyleSheet.create({
   outer: {
-    padding: '40px',
-    fontSize: '2em',
-    background:'#1F1C2C',
-    background: 'linear-gradient(to left, #928DAB, #1F1C2C)'
+    padding: "40px",
+    fontSize: "2em",
+    background: "#1F1C2C",
+    background: "linear-gradient(to left, #928DAB, #1F1C2C)"
   },
   main: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    overflow: 'hidden',
-    padding: '40px',
-    '@media only screen and (min-width : 480px)': {
-      flexDirection: 'row',
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    overflow: "hidden",
+    padding: "40px",
+    "@media only screen and (min-width : 480px)": {
+      flexDirection: "row"
     }
   },
   button: {
     marginTop: 10,
-    '@media only screen and (min-width : 480px)': {
+    "@media only screen and (min-width : 480px)": {
       marginLeft: 10,
-      marginTop: 0,
-    },
+      marginTop: 0
+    }
   },
   header: {
-    color: 'white',
+    color: "white"
   }
-})
+});
 
 const Newsletter = () => (
   <div className={css(styles.outer)}>
-    <h3 className={`text-center ${css(styles.header)}`}>Subscribe to Newsletter</h3>
+    <h3 className={`text-center ${css(styles.header)}`}>
+      Subscribe to Newsletter
+    </h3>
     <div className={css(styles.main)}>
       <input type="email" />
-      <button className={`btn btn-primary btn-lg ${css(styles.button)}`}>Subscribe</button>
+      <button className={`btn btn-primary btn-lg ${css(styles.button)}`}>
+        Subscribe
+      </button>
     </div>
   </div>
-)
+);
 
-export default Newsletter
+export default Newsletter;
