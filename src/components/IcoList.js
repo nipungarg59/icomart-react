@@ -57,7 +57,7 @@ class IcoList extends Component {
     return (
       <div>
         <h1>{this.state.title}</h1>
-        <Row>
+        <Row className="is-flex">
           {this.state.data ? (
             this.state.data.map((ico, i) => (
               <Col key={i} xs={12} sm={6} md={4} lg={3}>

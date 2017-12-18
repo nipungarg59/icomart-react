@@ -13,6 +13,9 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     boxShadow: "5px 5px 25px 0 rgba(46, 61, 73, 0.2)",
     transition: "all 0.3s ease",
+    display: "flex",
+    flexDirection: "column",
+    flexGrow: "1",
     ":hover": {
       boxShadow: "2px 2px 10px 0 rgba(46, 61, 73, 0.2)"
     }
