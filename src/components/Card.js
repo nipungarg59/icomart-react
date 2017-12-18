@@ -11,9 +11,10 @@ const styles = StyleSheet.create({
     padding: "10px 20px",
     margin: "10px 0",
     borderRadius: 5,
-    background: "whitesmoke",
+    boxShadow: "5px 5px 25px 0 rgba(46, 61, 73, 0.2)",
+    transition: "all 0.3s ease",
     ":hover": {
-      boxShadow: "1px 5px 15px darkgray"
+      boxShadow: "2px 2px 10px 0 rgba(46, 61, 73, 0.2)"
     }
   },
   cardBody: {
