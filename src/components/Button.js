@@ -25,6 +25,8 @@ const buttonTypes = type => {
       return { icon: "twitter", color: "1da1f2" };
     case "youtube":
       return { icon: "youtube-play", color: "ff0000" };
+    default:
+      return {};
   }
 };
 
