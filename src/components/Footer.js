@@ -4,7 +4,6 @@ import { Grid, Row, Col } from "react-bootstrap";
 
 const styles = StyleSheet.create({
   footer: {
-    background: "#16222a",
     background: "linear-gradient(to right, #16222a, #3a6073)",
     color: "white",
     padding: "40px 0"
