@@ -1,61 +1,71 @@
-import React from 'react'
-import { StyleSheet, css } from 'aphrodite'
+import React from "react";
+import { StyleSheet, css } from "aphrodite";
 
-import Button from './Button'
+import Button from "./Button";
 
 const styles = StyleSheet.create({
   cardImage: {
-    width: '100%',
+    width: "100%"
   },
   card: {
-    padding: '10px 20px',
-    margin: '10px 0',
+    padding: "10px 20px",
+    margin: "10px 0",
     borderRadius: 5,
-    background: 'whitesmoke',
-    ':hover': {
-      boxShadow: '1px 5px 15px darkgray',
-    },
+    background: "whitesmoke",
+    ":hover": {
+      boxShadow: "1px 5px 15px darkgray"
+    }
   },
   cardBody: {
     padding: 20,
-    overflowWrap: 'break-word',
-    wordWrap: 'break-word',
-    hyphens: 'auto',
+    overflowWrap: "break-word",
+    wordWrap: "break-word",
+    hyphens: "auto"
   },
   cardButtons: {
-    display: 'flex',
-    justifyContent: 'center',
-  },
-})
-
-const time = (t) => {
-  if (t < 1000) {
-    return `${t} milliseconds`
-  } else if (t < 60 * 1000) {
-    return `${Math.round(t / 1000)} seconds`
-  } else if (t < 60 * 60 * 1000) {
-    return `${Math.round(t / 60000)} minutes`
-  } else if (t < 24 * 60 * 60 * 1000) {
-    return `${Math.round(t / 3600000)} hours`
-  } else if (t < 356 * 24 * 60 * 60 * 1000) {
-    return `${Math.round(t / 86400000)} days`
-  } else {
-    return `${Math.round(t / 31536000000)} years`
+    display: "flex",
+    justifyContent: "center"
   }
-}
+});
 
-const timeString = (t) => {
+const time = t => {
+  if (t < 1000) {
+    return `${t} milliseconds`;
+  } else if (t < 60 * 1000) {
+    return `${Math.round(t / 1000)} seconds`;
+  } else if (t < 60 * 60 * 1000) {
+    return `${Math.round(t / 60000)} minutes`;
+  } else if (t < 24 * 60 * 60 * 1000) {
+    return `${Math.round(t / 3600000)} hours`;
+  } else if (t < 356 * 24 * 60 * 60 * 1000) {
+    return `${Math.round(t / 86400000)} days`;
+  } else {
+    return `${Math.round(t / 31536000000)} years`;
+  }
+};
+
+const timeString = t => {
   if (t < 0) {
     return `${time(-t)} ago`;
   } else {
     return `${time(t)} left`;
   }
-}
+};
 
 const Card = ({ ico, extra }) => (
   <div className={css(styles.card)}>
-    <h4 className="text-muted text-right">{timeString(new Date(ico.close_date) - new Date())}</h4>
-    {ico.ico_name ? <img src={ico.img_url} alt={ico.ico_name} className={css(styles.cardImage)}/> : ""}
+    <h4 className="text-muted text-right">
+      {timeString(new Date(ico.close_date) - new Date())}
+    </h4>
+    {ico.ico_name ? (
+      <img
+        src={ico.img_url}
+        alt={ico.ico_name}
+        className={css(styles.cardImage)}
+      />
+    ) : (
+      ""
+    )}
     <h1 className="text-center">{ico.ico_name}</h1>
     <p className={css(styles.cardBody)}>{ico.short_description}</p>
     <div className={css(styles.cardButtons)}>
@@ -65,10 +75,8 @@ const Card = ({ ico, extra }) => (
       <Button type="telegram" link={ico.telegram_link} />
       <Button type="youtube" link={ico.youtube_link} />
     </div>
-    <div>
-      { extra }
-    </div>
+    <div>{extra}</div>
   </div>
-)
+);
 
-export default Card
+export default Card;
