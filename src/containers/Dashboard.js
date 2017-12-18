@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Tabs, Tab, Grid } from "react-bootstrap";
+import { Tab, Grid } from "react-bootstrap";
 
 import IcoList from "../components/IcoList";
 import Team from "../components/Team";
@@ -48,6 +48,9 @@ class Dashboard extends Component {
           case "RECENT":
             this.setState({ recent: res.list });
             break;
+          default:
+            console.error("Invalid choice");
+            break;
         }
       });
   }
@@ -65,6 +68,9 @@ class Dashboard extends Component {
         break;
       case 4:
         this.sendRequest("RECENT");
+        break;
+      default:
+        console.error("Invalid choice");
         break;
     }
   }
