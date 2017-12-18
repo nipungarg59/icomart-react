@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Row, Col, Panel } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 
 import Card from "./Card";
 
