@@ -189,7 +189,7 @@ class NavbarComponent extends Component {
                   <span className="icon-bar" />
                 </button>
                 <a className="navbar-brand" href="/">
-                  <img src={logo} />
+                  <img src={logo} alt="logo" />
                 </a>
               </div>
               <div className="collapse navbar-collapse" id="myNavbar">
